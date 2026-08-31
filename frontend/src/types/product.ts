@@ -9,3 +9,8 @@ export type Product = {
   top_positives: string[];
   top_complaints: string[];
 };
+
+export type ProductSearchResult = {
+  id: string;
+  name: string;
+};
