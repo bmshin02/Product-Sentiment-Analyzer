@@ -1,6 +1,6 @@
-# Reddit Product Intelligence
+# Product Sentiment Analyzer
 
-Reddit Product Intelligence is a full-stack product research application designed to transform consumer discussions into structured product insights.
+Product Sentiment Analyzer is a full-stack product research application designed to transform consumer discussions into structured product insights.
 
 The long-term goal is to analyze Reddit discussions using natural language processing, sentiment analysis, semantic embeddings, topic clustering, and evidence-grounded AI summaries.
 
@@ -44,7 +44,7 @@ Current features include:
 ## Project Structure
 
 ```text
-reddit-product-intelligence/
+product-sentiment-analyzer/
 ├── frontend/
 ├── backend/
 ├── data/
