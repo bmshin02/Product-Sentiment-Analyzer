@@ -68,6 +68,7 @@ The API runs at:
 
 ```text
 http://localhost:8000
+https://reddit-product-intelligence.onrender.com/
 ```
 
 FastAPI documentation is available at:
@@ -102,6 +103,7 @@ The frontend runs at:
 
 ```text
 http://localhost:5173
+https://product-sentiment-analyzer-amber.vercel.app/
 ```
 
 ## Roadmap
