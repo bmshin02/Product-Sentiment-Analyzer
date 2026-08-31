@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 
-import { getProduct, searchProducts } from "./api/products";
+import { getProduct } from "./api/products";
 
-import type { Product, ProductSearchResult } from "./types/product";
+import InsightList from "./components/insightlist";
+import ProductHeader from "./components/productheader";
+import ProductSearch from "./components/productsearch";
+import SentimentSummary from "./components/sentimentsummary";
+
+import type { Product } from "./types/product";
 
 function App() {
   const [product, setProduct] = useState<Product | null>(null);
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<ProductSearchResult[]>([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -25,34 +28,12 @@ function App() {
     loadInitialProduct();
   }, []);
 
-  async function handleSearch() {
-    if (!query.trim()) {
-      setResults([]);
-      return;
-    }
-
-    try {
-      setError("");
-
-      const data = await searchProducts(query);
-
-      setResults(data);
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message);
-      }
-    }
-  }
-
-  async function handleSelectProduct(productId: string) {
+  async function loadProduct(productId: string) {
     try {
       setError("");
 
       const data = await getProduct(productId);
-
       setProduct(data);
-      setResults([]);
-      setQuery("");
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -61,71 +42,39 @@ function App() {
   }
 
   return (
-    <main>
-      <h1>Reddit Product Intelligence</h1>
+    <main className="app">
+      <header className="hero">
+        <h1>Reddit Product Intelligence</h1>
 
-      <section>
-        <input
-          type="text"
-          placeholder="Search for a product..."
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
+        <p>Understand what consumers actually think about products.</p>
 
-        <button onClick={handleSearch}>Search</button>
+        <ProductSearch onSelectProduct={loadProduct} />
+      </header>
 
-        {results.length > 0 && (
-          <ul>
-            {results.map((result) => (
-              <li key={result.id}>
-                <button onClick={() => handleSelectProduct(result.id)}>
-                  {result.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-
-      {error && <p>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
 
       {product && (
-        <>
-          <section>
-            <h2>{product.name}</h2>
-            <p>{product.reviews_analyzed} reviews analyzed</p>
-          </section>
+        <div className="dashboard">
+          <ProductHeader
+            name={product.name}
+            reviewsAnalyzed={product.reviews_analyzed}
+          />
 
-          <section>
-            <h3>Sentiment</h3>
+          <SentimentSummary
+            positive={product.sentiment.positive}
+            neutral={product.sentiment.neutral}
+            negative={product.sentiment.negative}
+          />
 
-            <p>Positive: {Math.round(product.sentiment.positive * 100)}%</p>
+          <div className="insight-grid">
+            <InsightList title="Top Positives" items={product.top_positives} />
 
-            <p>Neutral: {Math.round(product.sentiment.neutral * 100)}%</p>
-
-            <p>Negative: {Math.round(product.sentiment.negative * 100)}%</p>
-          </section>
-
-          <section>
-            <h3>Top Positives</h3>
-
-            <ul>
-              {product.top_positives.map((positive) => (
-                <li key={positive}>{positive}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h3>Top Complaints</h3>
-
-            <ul>
-              {product.top_complaints.map((complaint) => (
-                <li key={complaint}>{complaint}</li>
-              ))}
-            </ul>
-          </section>
-        </>
+            <InsightList
+              title="Top Complaints"
+              items={product.top_complaints}
+            />
+          </div>
+        </div>
       )}
     </main>
   );
