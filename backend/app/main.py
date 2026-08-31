@@ -1,8 +1,7 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.data.products import products
-from app.schemas.product import Product, ProductSearchResult
+from app.api.routes import health, products
 
 app = FastAPI()
 
@@ -14,46 +13,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
-
-
-@app.get(
-    "/products/{product_id}",
-    response_model=Product,
-)
-def get_product(product_id: str):
-    product = products.get(product_id)
-
-    if product is None:
-        raise HTTPException(
-            status_code=404,
-            detail="Product not found",
-        )
-
-    return product
-
-@app.get(
-    "/products",
-    response_model=list[ProductSearchResult],
-)
-def search_products(query: str = ""):
-    if not query:
-        return []
-
-    query = query.lower()
-
-    results = []
-
-    for product_id, product in products.items():
-        if query in product["name"].lower():
-            results.append(
-                {
-                    "id": product_id,
-                    "name": product["name"],
-                }
-            )
-
-    return results
+app.include_router(health.router)
+app.include_router(products.router)
