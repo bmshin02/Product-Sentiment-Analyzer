@@ -12,6 +12,7 @@ import type { Product } from "./types/product";
 function App() {
   const [product, setProduct] = useState<Product | null>(null);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function loadInitialProduct() {
@@ -22,6 +23,8 @@ function App() {
         if (error instanceof Error) {
           setError(error.message);
         }
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -30,14 +33,19 @@ function App() {
 
   async function loadProduct(productId: string) {
     try {
+      setIsLoading(true);
       setError("");
+      setProduct(null);
 
       const data = await getProduct(productId);
+
       setProduct(data);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
       }
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -53,7 +61,9 @@ function App() {
 
       {error && <p className="error-message">{error}</p>}
 
-      {product && (
+      {isLoading && <p className="loading-message">Loading product...</p>}
+
+      {product && !isLoading && (
         <div className="dashboard">
           <ProductHeader
             name={product.name}
