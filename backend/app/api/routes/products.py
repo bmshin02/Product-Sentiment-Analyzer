@@ -1,7 +1,10 @@
 from fastapi import APIRouter, HTTPException
 
-from app.data.products import products
 from app.schemas.product import Product, ProductSearchResult
+from app.services.productservice import (
+    get_product,
+    search_products,
+)
 
 router = APIRouter(
     prefix="/products",
@@ -13,32 +16,16 @@ router = APIRouter(
     "",
     response_model=list[ProductSearchResult],
 )
-def search_products(query: str = ""):
-    if not query:
-        return []
-
-    query = query.lower()
-
-    results = []
-
-    for product_id, product in products.items():
-        if query in product["name"].lower():
-            results.append(
-                {
-                    "id": product_id,
-                    "name": product["name"],
-                }
-            )
-
-    return results
+def search_products_route(query: str = ""):
+    return search_products(query)
 
 
 @router.get(
     "/{product_id}",
     response_model=Product,
 )
-def get_product(product_id: str):
-    product = products.get(product_id)
+def get_product_route(product_id: str):
+    product = get_product(product_id)
 
     if product is None:
         raise HTTPException(
