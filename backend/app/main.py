@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.data.products import products
+from app.schemas.product import Product, ProductSearchResult
 
 app = FastAPI()
 
@@ -19,7 +20,10 @@ def health_check():
     return {"status": "ok"}
 
 
-@app.get("/products/{product_id}")
+@app.get(
+    "/products/{product_id}",
+    response_model=Product,
+)
 def get_product(product_id: str):
     product = products.get(product_id)
 
@@ -31,7 +35,10 @@ def get_product(product_id: str):
 
     return product
 
-@app.get("/products")
+@app.get(
+    "/products",
+    response_model=list[ProductSearchResult],
+)
 def search_products(query: str = ""):
     if not query:
         return []
