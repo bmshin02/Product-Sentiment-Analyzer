@@ -1,5 +1,3 @@
-from collections import Counter
-
 from app.services.analysis.textcleaner import (
     remove_stop_words,
     tokenize,
@@ -36,3 +34,12 @@ def get_top_words(
     )
 
     return sorted_words[:limit]
+
+def get_ngrams(tokens: list[str], n: int) -> list[tuple]:
+    ngrams = []
+
+    for i in range(len(tokens) - n + 1):
+        ngram = tuple(tokens[i:i + n])
+        ngrams.append(ngram)
+
+    return ngrams
