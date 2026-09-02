@@ -2,44 +2,63 @@
 
 Product Sentiment Analyzer is a full-stack product research application designed to transform consumer discussions into structured product insights.
 
-The long-term goal is to analyze Reddit discussions using natural language processing, sentiment analysis, semantic embeddings, topic clustering, and evidence-grounded AI summaries.
+The project is being built incrementally to explore **natural language processing, machine learning, and full-stack development**. The long-term goal is to analyze Reddit discussions for sentiment, common complaints, praised features, and recurring product topics.
 
-## Current Version — 0.1
+## Live Demo
 
-The current MVP uses fixture data to establish the application's full-stack architecture before integrating real Reddit data or machine learning.
+**Frontend:**  
+https://product-sentiment-analyzer-amber.vercel.app/
 
-Current features include:
+**API:**  
+https://reddit-product-intelligence.onrender.com/
+
+**API Docs:**  
+https://reddit-product-intelligence.onrender.com/docs
+
+## Current Version — 0.2
+
+The application currently uses fixture product data while the NLP pipeline is being developed.
+
+### Features
 
 - Product search
-- Product sentiment summaries
-- Top positive product attributes
-- Common complaints
-- React and FastAPI communication
-- Loading and error states
-- Validated FastAPI response schemas
+- Product sentiment dashboard
+- Positive attributes and common complaints
+- React frontend connected to FastAPI
+- Loading and error handling
+- Pydantic API validation
+- Text cleaning and normalization
+- Tokenization
+- Stop-word filtering
+- Word-frequency analysis
+- N-gram analysis
+- Unit tests with pytest
 
 ## Tech Stack
 
-### Frontend
+**Frontend**
 
 - React
 - TypeScript
 - Vite
+- Vercel
 
-### Backend
+**Backend**
 
 - Python
 - FastAPI
 - Pydantic
+- pytest
+- Render
 
-### Planned
+**Planned**
 
+- Sentiment analysis
 - PostgreSQL
-- NLP sentiment analysis
 - Semantic embeddings
 - Topic clustering
-- Reddit data ingestion
-- Retrieval-augmented generation
+- Reddit API integration
+- RAG / AI summaries
 
 ## Project Structure
 
@@ -64,28 +83,9 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-The API runs at:
-
-```text
-http://localhost:8000
-https://reddit-product-intelligence.onrender.com/
-```
-
-FastAPI documentation is available at:
-
-```text
-http://localhost:8000/docs
-```
-
 ### Frontend
 
-Create:
-
-```text
-frontend/.env
-```
-
-with:
+Create `frontend/.env`:
 
 ```env
 VITE_API_URL=http://localhost:8000
@@ -99,24 +99,17 @@ npm install
 npm run dev
 ```
 
-The frontend runs at:
-
-```text
-http://localhost:5173
-https://product-sentiment-analyzer-amber.vercel.app/
-```
-
 ## Roadmap
 
-- 0.1 — Product dashboard using fixture data
-- 0.2 — Text cleaning and NLP fundamentals
+- ✅ 0.1 — Full-stack product dashboard
+- ✅ 0.2 — NLP text preprocessing
 - 0.3 — Sentiment analysis
 - 0.4 — Topic extraction
 - 0.5 — Semantic embeddings
 - 0.6 — Comment clustering
 - 0.7 — Reddit ingestion
-- 0.8 — PostgreSQL integration
-- 0.9 — AI-generated summaries
-- 1.0 — Semantic search and RAG
+- 0.8 — PostgreSQL
+- 0.9 — AI summaries
+- 1.0 — Semantic search / RAG
 - 1.1 — Product comparison
-- 1.2 — AI evaluation suite
+- 1.2 — Evaluation suite
