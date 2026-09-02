@@ -111,5 +111,3 @@ npm run dev
 - 0.8 — PostgreSQL
 - 0.9 — AI summaries
 - 1.0 — Semantic search / RAG
-- 1.1 — Product comparison
-- 1.2 — Evaluation suite
