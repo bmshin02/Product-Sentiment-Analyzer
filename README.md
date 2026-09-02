@@ -1,6 +1,6 @@
 # Product Sentiment Analyzer
 
-A full-stack application that turns consumer product discussions into structured insights.
+Product Sentiment Analyzer is a full-stack product research application designed to transform consumer discussions into structured product insights.
 
 The project is being built incrementally to explore **natural language processing, machine learning, and full-stack development**. The long-term goal is to analyze Reddit discussions for sentiment, common complaints, praised features, and recurring product topics.
 
