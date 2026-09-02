@@ -6,6 +6,8 @@ The project is being built incrementally to explore **natural language processin
 
 ## Live Demo
 
+NOTE: Backend is using Render on free plan so please wait for it to load for data to show up. 
+
 **Frontend:**  
 https://product-sentiment-analyzer-amber.vercel.app/
 
