@@ -43,3 +43,38 @@ def get_ngrams(tokens: list[str], n: int) -> list[tuple]:
         ngrams.append(ngram)
 
     return ngrams
+
+def get_ngram_frequencies(
+    texts: list[str],
+    n: int,
+) -> dict[tuple, int]:
+    frequencies = {}
+
+    for text in texts:
+        tokens = tokenize(text)
+        tokens = remove_stop_words(tokens)
+
+        ngrams = get_ngrams(tokens, n)
+
+        for ngram in ngrams:
+            if ngram in frequencies:
+                frequencies[ngram] += 1
+            else:
+                frequencies[ngram] = 1
+
+    return frequencies
+
+def get_top_ngrams(
+    texts: list[str],
+    n: int,
+    limit: int = 10,
+) -> list[tuple[tuple, int]]:
+    frequencies = get_ngram_frequencies(texts, n)
+
+    sorted_ngrams = sorted(
+        frequencies.items(),
+        key=lambda item: item[1],
+        reverse=True,
+    )
+
+    return sorted_ngrams[:limit]
