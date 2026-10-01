@@ -52,7 +52,7 @@ function App() {
   return (
     <main className="app">
       <header className="hero">
-        <h1>Reddit Product Intelligence</h1>
+        <h1>Product Sentiment Analyzer</h1>
 
         <p>Understand what consumers actually think about products.</p>
 

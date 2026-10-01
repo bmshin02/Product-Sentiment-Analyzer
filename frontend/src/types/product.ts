@@ -1,4 +1,5 @@
 export type Product = {
+  id: string;
   name: string;
   reviews_analyzed: number;
   sentiment: {

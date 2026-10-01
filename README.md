@@ -55,21 +55,28 @@ The application currently uses fixture product data while the NLP pipeline is be
 
 **Planned**
 
-- Sentiment analysis
-- PostgreSQL
+- Sentiment analysis (VADER)
+- Aspect-based sentiment
+- Reddit API integration
+- PostgreSQL + pgvector
 - Semantic embeddings
 - Topic clustering
-- Reddit API integration
-- RAG / AI summaries
+- AI summaries / RAG
 
 ## Project Structure
 
 ```text
-product-sentiment-analyzer/
-├── frontend/
+Product-Sentiment-Analyzer/
 ├── backend/
-├── data/
-├── docs/
+│   ├── app/
+│   │   ├── api/routes/      # FastAPI routers
+│   │   ├── data/            # fixture products and comments
+│   │   ├── schemas/         # Pydantic models
+│   │   └── services/        # product service + NLP analysis
+│   └── tests/
+├── frontend/
+│   └── src/                 # components, API client, types
+├── docs/                    # roadmap and planning notes
 └── README.md
 ```
 
@@ -77,13 +84,27 @@ product-sentiment-analyzer/
 
 ### Backend
 
+macOS / Linux:
+
 ```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+Windows (PowerShell):
+
+```powershell
 cd backend
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+
+Run the tests with `pytest` from `backend/`.
 
 ### Frontend
 
@@ -106,10 +127,12 @@ npm run dev
 - ✅ 0.1 — Full-stack product dashboard
 - ✅ 0.2 — NLP text preprocessing
 - 0.3 — Sentiment analysis
-- 0.4 — Topic extraction
-- 0.5 — Semantic embeddings
-- 0.6 — Comment clustering
-- 0.7 — Reddit ingestion
-- 0.8 — PostgreSQL
-- 0.9 — AI summaries
-- 1.0 — Semantic search / RAG
+- 0.4 — Aspect / topic extraction
+- 0.5 — Reddit ingestion + PostgreSQL
+- 0.6 — Semantic embeddings
+- 0.7 — Comment clustering
+- 0.8 — AI summaries
+- 0.9 — Semantic search / RAG
+- 1.0 — Production polish
+
+See [docs/ROADMAP.md](docs/ROADMAP.md) for each milestone's tasks.

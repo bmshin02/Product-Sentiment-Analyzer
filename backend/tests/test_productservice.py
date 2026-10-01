@@ -1,0 +1,21 @@
+from app.schemas.product import Product
+from app.services.productservice import get_product
+
+
+def test_get_product_includes_id():
+    product = get_product("airpods-pro")
+
+    assert product["id"] == "airpods-pro"
+    assert Product(**product).id == "airpods-pro"
+
+
+def test_get_product_unknown_returns_none():
+    assert get_product("does-not-exist") is None
+
+
+def test_every_product_has_fixture_comments():
+    from app.data.comments import comments
+    from app.data.products import products
+
+    for product_id in products:
+        assert 15 <= len(comments[product_id]) <= 20

@@ -8,6 +8,7 @@ class Sentiment(BaseModel):
 
 
 class Product(BaseModel):
+    id: str
     name: str
     reviews_analyzed: int
     sentiment: Sentiment

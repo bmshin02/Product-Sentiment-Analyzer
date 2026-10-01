@@ -22,4 +22,9 @@ def search_products(query: str):
 
 
 def get_product(product_id: str):
-    return products.get(product_id)
+    product = products.get(product_id)
+
+    if product is None:
+        return None
+
+    return {"id": product_id, **product}

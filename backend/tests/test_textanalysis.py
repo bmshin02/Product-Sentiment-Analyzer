@@ -78,3 +78,26 @@ def test_get_trigrams():
         ("active", "noise", "cancellation"),
         ("noise", "cancellation", "great"),
     ]
+
+
+def test_clean_text_expands_negative_contractions():
+    assert clean_text("It isn't good") == "it is not good"
+    assert clean_text("I don't like it") == "i do not like it"
+    assert clean_text("They can't connect") == "they can not connect"
+    assert clean_text("It won't pair") == "it will not pair"
+
+
+def test_clean_text_expands_other_contractions():
+    assert clean_text("They're great") == "they are great"
+    assert clean_text("I've had them a year") == "i have had them a year"
+    assert clean_text("I'm happy") == "i am happy"
+
+
+def test_clean_text_handles_curly_apostrophes():
+    assert clean_text("It isn\u2019t good") == "it is not good"
+
+
+def test_negation_survives_tokenize_and_stop_words():
+    tokens = remove_stop_words(tokenize("The battery isn't terrible"))
+
+    assert "not" in tokens
