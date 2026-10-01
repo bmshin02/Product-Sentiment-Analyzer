@@ -2,10 +2,10 @@ from app.data.products import products
 
 
 def search_products(query: str):
+    query = query.strip().lower()
+
     if not query:
         return []
-
-    query = query.lower()
 
     results = []
 
