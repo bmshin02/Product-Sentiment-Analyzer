@@ -1,0 +1,352 @@
+[
+  {
+    "id": "fixture-001",
+    "product_id": "airpods-pro",
+    "text": "The noise cancellation is REALLY good!!!",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-002",
+    "product_id": "airpods-pro",
+    "text": "Battery life has gotten worse after a year.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-003",
+    "product_id": "airpods-pro",
+    "text": "I love the transparency mode.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-004",
+    "product_id": "airpods-pro",
+    "text": "They're great, but honestly way too expensive.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-005",
+    "product_id": "airpods-pro",
+    "text": "The fit doesn't work well for my ears.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-006",
+    "product_id": "airpods-pro",
+    "text": "Apple's ecosystem integration is super convenient.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-007",
+    "product_id": "airpods-pro",
+    "text": "Noise cancelling works amazingly on flights.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-008",
+    "product_id": "airpods-pro",
+    "text": "The battery isn't terrible, but I expected better.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-009",
+    "product_id": "airpods-pro",
+    "text": "Switching between my iPhone and Mac is seamless.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-010",
+    "product_id": "airpods-pro",
+    "text": "One earbud keeps dying faster than the other.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-011",
+    "product_id": "airpods-pro",
+    "text": "Transparency mode sounds so natural I forget they're in.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-012",
+    "product_id": "airpods-pro",
+    "text": "The case is nice, but it scratches way too easily.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-013",
+    "product_id": "airpods-pro",
+    "text": "I can't get a good seal with the stock tips.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-014",
+    "product_id": "airpods-pro",
+    "text": "Sound quality is good, not amazing for the price.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-015",
+    "product_id": "airpods-pro",
+    "text": "Replacing them every two years because of the battery is ridiculous.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-016",
+    "product_id": "airpods-pro",
+    "text": "Best earbuds I've owned, and I've tried a lot of them.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-017",
+    "product_id": "airpods-pro",
+    "text": "They fall out when I run, which is disappointing.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-018",
+    "product_id": "airpods-pro",
+    "text": "Call quality is excellent, even in windy weather.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-019",
+    "product_id": "sony-wh-1000xm6",
+    "text": "The noise cancellation is incredible.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-020",
+    "product_id": "sony-wh-1000xm6",
+    "text": "Sound quality is excellent.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-021",
+    "product_id": "sony-wh-1000xm6",
+    "text": "They're comfortable even after several hours.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-022",
+    "product_id": "sony-wh-1000xm6",
+    "text": "The microphone could definitely be better.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-023",
+    "product_id": "sony-wh-1000xm6",
+    "text": "These are way too expensive.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-024",
+    "product_id": "sony-wh-1000xm6",
+    "text": "I don't think it's a huge upgrade from the XM5.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-025",
+    "product_id": "sony-wh-1000xm6",
+    "text": "Honestly the best ANC I've ever heard on a plane.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-026",
+    "product_id": "sony-wh-1000xm6",
+    "text": "Call quality is mediocre in noisy places.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-027",
+    "product_id": "sony-wh-1000xm6",
+    "text": "The battery lasts forever, I charge them once a week.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-028",
+    "product_id": "sony-wh-1000xm6",
+    "text": "Not worth upgrading if you already own the XM5.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-029",
+    "product_id": "sony-wh-1000xm6",
+    "text": "The app has way too many options, but the EQ is great.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-030",
+    "product_id": "sony-wh-1000xm6",
+    "text": "They don't fold as small as the older model.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-031",
+    "product_id": "sony-wh-1000xm6",
+    "text": "Multipoint works flawlessly with my phone and laptop.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-032",
+    "product_id": "sony-wh-1000xm6",
+    "text": "Comfortable, but the clamp force is a bit tight at first.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-033",
+    "product_id": "sony-wh-1000xm6",
+    "text": "For $450 I expected a better microphone.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-034",
+    "product_id": "sony-wh-1000xm6",
+    "text": "The sound is warm and detailed, I love it!!!",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-035",
+    "product_id": "steam-deck-oled",
+    "text": "The OLED screen is gorgeous, I can't go back to the LCD.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-036",
+    "product_id": "steam-deck-oled",
+    "text": "Battery life is noticeably better than the original.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-037",
+    "product_id": "steam-deck-oled",
+    "text": "It's still too big to comfortably hold for long sessions.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-038",
+    "product_id": "steam-deck-oled",
+    "text": "The game library is huge and most of it just works.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-039",
+    "product_id": "steam-deck-oled",
+    "text": "Demanding games struggle to hold 60 fps.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-040",
+    "product_id": "steam-deck-oled",
+    "text": "The 1TB model is ridiculously expensive.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-041",
+    "product_id": "steam-deck-oled",
+    "text": "I love that I can play my whole Steam library anywhere.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-042",
+    "product_id": "steam-deck-oled",
+    "text": "Fans are quieter than before, which is great.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-043",
+    "product_id": "steam-deck-oled",
+    "text": "It isn't powerful enough for the newest releases.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-044",
+    "product_id": "steam-deck-oled",
+    "text": "Suspend and resume is almost instant, super convenient.",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-045",
+    "product_id": "steam-deck-oled",
+    "text": "The joysticks feel great, but the device is heavy.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-046",
+    "product_id": "steam-deck-oled",
+    "text": "I wish storage upgrades didn't cost so much.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-047",
+    "product_id": "steam-deck-oled",
+    "text": "HDR looks stunning on this display!!!",
+    "label": "positive",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-048",
+    "product_id": "steam-deck-oled",
+    "text": "Not every game is verified, so you end up tweaking settings.",
+    "label": "negative",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-049",
+    "product_id": "steam-deck-oled",
+    "text": "The battery isn't amazing on heavier games, but fine for indies.",
+    "label": "neutral",
+    "source": "fixture"
+  },
+  {
+    "id": "fixture-050",
+    "product_id": "steam-deck-oled",
+    "text": "Docking it to a TV works better than I expected.",
+    "label": "positive",
+    "source": "fixture"
+  }
+]
