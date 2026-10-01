@@ -28,8 +28,8 @@ Data ingestion (0.5) comes before embeddings and clustering (0.6–0.7), so thos
 - [x] Expand contractions in `clean_text` before stripping punctuation, so "isn't" becomes "is not" rather than `isnt` and the negation survives. Add tests
 - [x] Add `id` to the `Product` schema
 - [x] Add fixture comments for `steam-deck-oled` and grow every product to about 15–20 comments
-- [ ] Add API tests with FastAPI's `TestClient` (`backend/tests/test_api.py`)
-- [ ] Add GitHub Actions CI: backend `pytest`, frontend `npm run lint && npm run build`
+- [x] Add API tests with FastAPI's `TestClient` (`backend/tests/test_api.py`)
+- [x] Add GitHub Actions CI: backend `pytest`, frontend `npm run lint && npm run build`
 - [x] README: macOS/Linux setup commands, and an accurate project structure
 - [x] Make the app title consistent ("Reddit Product Intelligence" in `App.tsx` vs. "Product Sentiment Analyzer")
 

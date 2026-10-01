@@ -24,6 +24,7 @@ Frontend (run from `frontend/`; needs `frontend/.env` with `VITE_API_URL=http://
 npm install
 npm run dev
 npm run lint
+npm test
 npm run build      # tsc -b && vite build
 ```
 
@@ -36,4 +37,4 @@ npm run build      # tsc -b && vite build
 
 ## Gotchas
 
-- There is no CI configured and no API tests yet; tests cover only the text analysis (`test_textanalysis.py`) and `productservice` (`test_productservice.py`).
+- CI (`.github/workflows/ci.yml`) runs `pytest` and the frontend lint, build and test on every PR and push to `main`. Backend API tests use `TestClient`, which needs `httpx2` (not `httpx`). Frontend tests are Vitest and Testing Library, colocated as `*.test.ts(x)` next to the code.
