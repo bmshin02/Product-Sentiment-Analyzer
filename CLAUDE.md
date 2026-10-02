@@ -8,6 +8,8 @@ Full-stack product sentiment dashboard: a FastAPI backend (`backend/`) and a Rea
 
 ## Commands
 
+Everything via Docker (from the repo root): `docker compose up --build` serves the frontend on :5173 and the API on :8000 with hot reload.
+
 Backend (run from `backend/`; the app imports as `app.*`, so run everything from that directory):
 
 ```bash

@@ -124,6 +124,16 @@ npm install
 npm run dev
 ```
 
+### Docker
+
+With Docker installed, run everything from the repo root:
+
+```bash
+docker compose up --build
+```
+
+The frontend is at http://localhost:5173 and the API at http://localhost:8000 (docs at `/docs`). Source is bind-mounted, so edits hot-reload. Run the backend tests with `docker compose run --rm backend pytest`.
+
 ## Roadmap
 
 - ✅ 0.1 — Full-stack product dashboard
