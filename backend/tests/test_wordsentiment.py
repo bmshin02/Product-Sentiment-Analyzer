@@ -9,25 +9,25 @@ def test_words_are_bucketed_by_polarity():
     assert negatives == [WordCount(word="terrible", count=1)]
 
 
-def test_negated_positive_word_is_listed_as_a_negative_phrase():
+def test_negated_positive_word_moves_to_negatives():
     positives, negatives = get_sentiment_words(["good, not amazing for the price"])
 
     assert positives == [WordCount(word="good", count=1)]
-    assert negatives == [WordCount(word="not amazing", count=1)]
+    assert negatives == [WordCount(word="amazing", count=1)]
 
 
-def test_negated_negative_word_is_listed_as_a_positive_phrase():
+def test_negated_negative_word_moves_to_positives():
     positives, negatives = get_sentiment_words(["it is not bad"])
 
-    assert positives == [WordCount(word="not bad", count=1)]
+    assert positives == [WordCount(word="bad", count=1)]
     assert negatives == []
 
 
-def test_plain_and_negated_uses_are_counted_separately():
+def test_plain_and_negated_uses_land_in_their_own_lists():
     positives, negatives = get_sentiment_words(["really good", "not good"])
 
     assert positives == [WordCount(word="good", count=1)]
-    assert negatives == [WordCount(word="not good", count=1)]
+    assert negatives == [WordCount(word="good", count=1)]
 
 
 def test_negation_scope_breaker_keeps_word_plain():

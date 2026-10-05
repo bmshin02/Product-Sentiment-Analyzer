@@ -31,7 +31,6 @@ def get_sentiment_words(
 
             if is_negated(tokens, index):
                 polarity = -polarity
-                token = f"not {token}"
 
             counts = positive_counts if polarity > 0 else negative_counts
             counts[token] = counts.get(token, 0) + 1
