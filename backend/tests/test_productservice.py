@@ -19,3 +19,17 @@ def test_every_product_has_fixture_comments():
 
     for product_id in products:
         assert 15 <= len(comments[product_id]) <= 20
+
+
+def test_get_product_computes_insights_from_comments():
+    from app.data.comments import comments
+
+    product = get_product("airpods-pro")
+
+    assert product["reviews_analyzed"] == len(comments["airpods-pro"])
+    assert product["top_positives"]
+    assert product["top_complaints"]
+
+    sentiment = product["sentiment"]
+    total = sentiment.positive + sentiment.neutral + sentiment.negative
+    assert abs(total - 1.0) < 1e-9

@@ -1,6 +1,8 @@
+import type { WordCount } from "../types/product";
+
 type InsightListProps = {
   title: string;
-  items: string[];
+  items: WordCount[];
 };
 
 function InsightList({ title, items }: InsightListProps) {
@@ -10,7 +12,9 @@ function InsightList({ title, items }: InsightListProps) {
 
       <ul>
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item.word}>
+            {item.word} ({item.count})
+          </li>
         ))}
       </ul>
     </section>

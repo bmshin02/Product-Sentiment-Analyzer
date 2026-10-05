@@ -1,4 +1,7 @@
+from app.data.comments import comments
 from app.data.products import products
+from app.services.analysis.sentiment import aggregate_sentiment
+from app.services.analysis.wordsentiment import get_sentiment_words
 
 
 def search_products(query: str):
@@ -27,4 +30,14 @@ def get_product(product_id: str):
     if product is None:
         return None
 
-    return {"id": product_id, **product}
+    product_comments = comments.get(product_id, [])
+    positives, negatives = get_sentiment_words(product_comments)
+
+    return {
+        "id": product_id,
+        "name": product["name"],
+        "reviews_analyzed": len(product_comments),
+        "sentiment": aggregate_sentiment(product_comments),
+        "top_positives": positives,
+        "top_complaints": negatives,
+    }

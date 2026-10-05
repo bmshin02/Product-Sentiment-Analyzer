@@ -1,3 +1,8 @@
+export type WordCount = {
+  word: string;
+  count: number;
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -7,8 +12,8 @@ export type Product = {
     neutral: number;
     negative: number;
   };
-  top_positives: string[];
-  top_complaints: string[];
+  top_positives: WordCount[];
+  top_complaints: WordCount[];
 };
 
 export type ProductSearchResult = {

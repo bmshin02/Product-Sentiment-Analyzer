@@ -7,13 +7,18 @@ class Sentiment(BaseModel):
     negative: float
 
 
+class WordCount(BaseModel):
+    word: str
+    count: int
+
+
 class Product(BaseModel):
     id: str
     name: str
     reviews_analyzed: int
     sentiment: Sentiment
-    top_positives: list[str]
-    top_complaints: list[str]
+    top_positives: list[WordCount]
+    top_complaints: list[WordCount]
 
 
 class ProductSearchResult(BaseModel):

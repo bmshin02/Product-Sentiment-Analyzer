@@ -21,7 +21,7 @@ https://reddit-product-intelligence.onrender.com/docs
 
 ## Current Version — 0.2
 
-The application currently uses fixture product data while the NLP pipeline is being developed.
+Product names and sample comments are still fixtures, but the sentiment split and the top positive and negative words are now computed from those comments.
 
 ### Features
 
@@ -35,6 +35,8 @@ The application currently uses fixture product data while the NLP pipeline is be
 - Tokenization
 - Stop-word filtering
 - Word-frequency analysis
+- Positive and negative word extraction (lexicon with negation and intensifiers)
+- Comment sentiment split (VADER)
 - N-gram analysis
 - Unit tests with pytest
 

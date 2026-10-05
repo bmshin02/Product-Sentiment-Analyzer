@@ -46,7 +46,7 @@ INTENSIFIER_FACTOR = 1.5
 NORMALIZATION_ALPHA = 15
 
 
-def _is_negated(tokens: list[str], index: int) -> bool:
+def is_negated(tokens: list[str], index: int) -> bool:
     for previous in reversed(tokens[max(0, index - NEGATION_WINDOW):index]):
         if previous in SCOPE_BREAKERS:
             return False
@@ -76,7 +76,7 @@ def score_comment(text: str) -> SentimentResult:
         if _is_intensified(tokens, index):
             value *= INTENSIFIER_FACTOR
 
-        if _is_negated(tokens, index):
+        if is_negated(tokens, index):
             value *= NEGATION_FACTOR
 
         total += value
